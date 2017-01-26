@@ -1,0 +1,123 @@
+.change-section-login
+{
+  margin: 0px;
+  padding-top: 10px;
+  max-height: calc(100% - 242px);
+  min-height: calc(100% - 186px);
+  overflow-y: scroll;
+}
+
+.main-header-content-login{
+
+  padding-bottom: 18px;
+
+}
+
+.login-view {
+  width: 50%;
+  margin: 0 auto;
+  color: #ffffff;
+  position: relative;
+  border-radius: 3px 3px 3px 3px;
+
+}
+
+.login-view .log-btn {
+  float: left;
+  width: 45%;
+  background-color: #1CAEA4;
+  padding: 2px 2px 4px 65px;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.login-view .or-btn {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 2px 2px 4px 4px;
+  margin-left: 35%;
+  background-color: #3B3C40;
+  position: absolute;
+}
+
+.login-view .reg-btn {
+  float: left;
+  width: 45.5%;
+  text-align: center;
+  background-color: #1CAEA4;
+  padding: 2px 2px 4px 10px;
+  margin-left: 9.5%;
+  color: white;
+  border-radius: 8px;
+}
+
+.main-login-header {
+  display: block;
+  width: 100%;
+  margin-bottom: 10%;
+  border-bottom: 3px solid #f2f2ef;
+}
+
+.mywidth .input-group-addon .glyphicon {
+  color: black;
+}
+
+.login-view .log-btn :hover {
+  font-weight: 600;
+}
+
+.login-view .reg-btn :hover {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.login-view .reg-btn .active {
+  color: #ffffff;
+  font-weight: 600;
+
+}
+
+.login-view .log-btn .active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+
+.reg-name {
+  width: 18px;
+}
+
+.glyph-color {
+  color: black;
+}
+
+.login-wrapper {
+  margin: 0 auto;
+  border-radius: 5px 5px 5px 5px;
+  padding: 0% 5% 16% 5%;
+  height: 100%;
+  background-image: url("../../images/login-texture.jpg");
+}
+
+.login-wrapper a{
+  color:#FFFFFF;
+}
+
+.login-img {
+  height: 55px;
+  margin-bottom: 20px;
+}
+
+.form-signin .input-group {
+
+  border: 2px solid black;
+}
+
+.login-wrapper .login-header {
+  margin-bottom: 5%;
+  padding-top: 3%;
+}

@@ -1,0 +1,198 @@
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+    <h3 class="bottom-border-board-time"><strong>Update Contact Information</strong></h3>
+    <h5>Select an account below to view your contact information, and to make any needed updates.</h5>
+    <div class="board-time-wrapper">
+        <div class="info-holder">
+            <div class="col-md-12 account-holder">
+                <div class="col-md-4">
+                    <label>* Select an Account: </label>
+                </div>
+                <div class="col-md-8">
+                    <select class="col-md-10">
+                        <option value="Account 1">Account 1</option>
+                        <option value="Account 2">Account 2</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <p>Below is a method by which to keep App up-to-date with respect to your contact information. We
+        strive to provide excellent services to each and every one of our owners. Keeping us updated with your most
+        recent contact information helps us provide you the best service possible.</p>
+    <div class="row">
+        <h4><strong>Your Legal Name</strong></h4>
+        <div class="board-time-wrapper">
+            <div class="info-holder">
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <h5>
+                            <strong>Current Information</strong>
+                        </h5>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> First Name:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="fname" placeholder="First Name">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Middle Name:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="mname" placeholder="Middle Name">
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Last Name:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="lname" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="padding: 10px 8px 10px 20px">
+                    <p>
+                        <strong>Note: </strong>If you wish to change information related to your identitiy
+                        such as your legal name or social security number, please contact a representative with
+                        our Owner Services department at (888) 476-0991.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h4><strong>Contact Details</strong></h4>
+        <div class="board-time-wrapper">
+            <div class="info-holder">
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <h5>
+                            <strong>Current Information</strong>
+
+                        </h5>
+                    </div>
+                    <input class="btn btn-success edit-contact" type="button" value="Edit"
+                           ng-click="uinfo.updateContact()">
+                </div>
+
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> New Address:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="naddress" ng-disabled="uinfo.editInfo"
+                               placeholder="New Address">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Address (cont.):</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="contadd" ng-disabled="uinfo.editInfo"
+                               placeholder="Address (cont.)">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> City:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="city" ng-disabled="uinfo.editInfo"
+                               placeholder="City">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> *State / Province:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="state" ng-disabled="uinfo.editInfo "
+                               placeholder=" State / Province">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Postal Code (zipcode):</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="zipcode" ng-disabled="uinfo.editInfo"
+                               placeholder="Postal Code (zipcode)">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Country: </label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="col-md-10" ng-disabled="uinfo.editInfo">
+                            <option value="Account 1">USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Mexico">Mexico</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> E-Mail Phone:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="email" ng-disabled="uinfo.editInfo"
+                               placeholder="E-Mail">
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Daytime Phone:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="dphone" ng-disabled="uinfo.editInfo"
+                               placeholder="Daytime Phone">
+                    </div>
+                </div>
+
+                <div class="col-md-12 legal-name-field-holder">
+                    <div class="col-md-4">
+                        <label> Evening Phone:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="col-md-10 input-pad" type="text" name="evephone" ng-disabled="uinfo.editInfo"
+                               placeholder="Evening Phone">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 submit-info">
+        <input class="btn btn-success edit-contact" type="button" value="Submit">
+    </div>
+</div>
+

@@ -1,0 +1,33 @@
+$font-family: 'Open Sans','Oswald',Verdana, Arial, Tahoma, SansSerif;
+$font-size: 13px;
+$pointer:pointer;
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body, header, nav, section, article, div {
+  display: block;
+}
+
+html,body{
+  height: 100%;
+}
+
+body {
+  background-color: #f2f2ef;
+  width: 100%;
+  overflow: hidden;
+  color: #464646;
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+.img-scale{
+  width: 150px;
+  height: 150px;
+}
+

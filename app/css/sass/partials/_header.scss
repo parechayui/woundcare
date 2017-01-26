@@ -1,0 +1,82 @@
+.main-wrapper .main-header-content {
+  background-color: #FFFFFF;
+  border-bottom: 5px solid #464646;
+  display: inline-block;
+  width: 100%;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.main-header-content .logo {
+  padding-left: 18px;
+  padding-top: 10px;
+}
+
+.full-bar {
+  border-left: 1px solid #e5e5e5;
+  height: 100%;
+}
+
+.full-bar-board {
+
+  width: 100px;
+}
+
+.login {
+  height: 50px;
+  float: right;
+}
+
+.navigation {
+  float: right;
+  height: 110px;
+}
+
+.navigation .full-bar a {
+  display: inline-block;
+  padding-top: 33px;
+  padding-bottom: 10px;
+  height: 100%;
+
+}
+
+.navigation .full-bar a:hover {
+  font-weight: 600;
+  color: #04bcbc;
+  z-index: 400;
+
+}
+
+.navigation .full-bar .active {
+  font-weight: 600;
+  color: #f9822a;
+  background-color:#eee ;
+
+}
+
+.text-center-silver {
+  width: 100%;
+  padding-left: 24px;
+}
+
+.text-center-portal {
+  width: 100%;
+  padding-left: 13px;
+}
+
+
+
+.text-center-reserve {
+  width: 100%;
+  padding-left: 32px;
+}
+
+.navigation .full-bar .header-menu {
+  left: -95px;
+  min-width:176px;
+}
+
+.navigation .full-bar .header-menu li a {
+  padding: 15px 7px;
+  width: 100%;
+}
