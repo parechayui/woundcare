@@ -1,8 +1,8 @@
-@import "partials/_header";
-@import "partials/_config";
-@import "partials/_general";
-@import "partials/footer";
-@import "partials/_login";
+@import "partials/_header.scss";
+@import "partials/_config.scss";
+@import "partials/_general.scss";
+@import "partials/_footer.scss";
+@import "partials/_login.scss";
 
 body{
     margin: 0;

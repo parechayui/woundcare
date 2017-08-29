@@ -4,7 +4,8 @@
     angular.module('woundCare').config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider
-            .when('', '/main')
+            .when('', '/main/patientlist')
+            .when('/main', '/main/patientlist')
             .otherwise(function ($injector) {
                 $injector.get('$state').go('404', {}, {location: false});
             });
@@ -17,8 +18,18 @@
             .state('main', {
                 url: '/main',
                 templateUrl: 'app/templates/main.html',
-                controller: 'mainController as mainCtrl'
-            });
+                controller: 'mainController as mainCtrl',
+                abstract:true
+            })
+                .state('main.patientlist', {
+                    url: '/patientlist',
+                    templateUrl: 'app/templates/patientlist.html',
+                    controller: 'patientListController as listCtrl'
+                }
+
+            );
+
+
 
         var user = {
             isAuthenticated: function () {
