@@ -20,12 +20,35 @@ body {
 .main-wrapper {
   padding: 0px; }
 
-.change-section {
-  margin: 0px;
-  max-height: calc(100% - 220px);
-  min-height: calc(100% - 228px);
-  overflow-y: scroll; }
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0; }
 
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 680px; }
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #b1aaaa;
+  height: 100%; }
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px; }
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px; }
+
+  .row.content {
+    height: auto; } }
 * {
   margin: 0px;
   padding: 0px;
@@ -48,58 +71,36 @@ body {
 .main-wrapper {
   padding: 0px; }
 
-.change-section {
-  margin: 0px;
-  max-height: calc(100% - 220px);
-  min-height: calc(100% - 228px);
-  overflow-y: scroll; }
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0; }
 
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 680px; }
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #b1aaaa;
+  height: 100%; }
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px; }
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px; }
+
+  .row.content {
+    height: auto; } }
 .cursor {
   cursor: pointer; }
-
-/*Footer Section*/
-.footer-container {
-  background-color: #424242;
-  color: white;
-  margin: 0px; }
-
-.footer-links {
-  padding: 1% 0 0 1%; }
-
-.footer-links ul {
-  list-style-type: none; }
-
-.footer-links-border {
-  border-right: 2px solid #FFFFFF;
-  text-align: center; }
-
-.footer-links ul li {
-  float: left;
-  padding: 0.6%; }
-
-.referral-align {
-  position: relative;
-  padding-left: 0px;
-  width: 150px;
-  text-align: center; }
-
-.footer-links a {
-  color: #FFF;
-  font-weight: bold;
-  font-size: 10px; }
-
-.copy-write {
-  text-align: center;
-  margin-top: .3%; }
-
-.copy-write p {
-  margin: 0;
-  font-size: 10px; }
-
-.main-content {
-  background: #fff;
-  height: 650px; }
-
-/*--- Table ---*/
 
 /*# sourceMappingURL=main.css.map */
