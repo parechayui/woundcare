@@ -4,6 +4,7 @@
 @import "partials/footer";
 @import "partials/_login";
 
+
 body{
   margin: 0;
   padding: 0;
@@ -20,6 +21,9 @@ body{
   width:100%;
   background-color: #eaebec;
   z-index: 4;
+
+  border-bottom: 5px solid #464646;
+  font-size: 16px;
 }
 .sideNav {
   position: absolute;
@@ -369,8 +373,8 @@ header::after {
 }
 .main-content{
   background: #fff;
-  height: 743px;
-  margin-left: 270px
+  height:650px;
+
 }
 
 /*--- Table ---*/

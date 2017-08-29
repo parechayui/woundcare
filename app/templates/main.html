@@ -1,177 +1,70 @@
-<div ng-controller="mainController as mainCtrl">
 
+<!-- Main Wrapper Starts here-->
+<div class="container-fluid main-wrapper " ng-controller="mainController as mainCtrl">
 
-    <!--Header-->
-    <header class="header">
-        <div class="container-fuild">
-            <div class="row">
-                <div class="col-sm-12 the-header">
+    <!--Header Section Starts-->
 
-                    <img src="app/images/logo.png" alt="Veristream" width="179" height="35" class="logo">
-                    <span class="brand"></span>
-
-
-                    <!--rightside of header-->
-
-                    <nav class="prior-nav">
-
-                        <ul id="accessNavBar">
-                            <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">Terms of Use</a></li>
-                            <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">My Profile</a></li>
-                            <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">Help</a></li>
-                            <li class="profile-menu selected"><a href="#" class="profile-select select" onclick="return false">Log Out</a></li>
-                        </ul>
-                    </nav>
-
-                </div>
+    <nav class="navbar navbar-default header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="app/images/logo.png" alt="Veristream" width="179" height="35" >
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">Terms of Use</a></li>
+                    <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">My Profile</a></li>
+                    <li class="profile-menu"><a href="#" class="profile-select" onclick="return false">Help</a></li>
+                    <li class="profile-menu selected"><a class="profile-select select" onclick="return false"><span class="glyphicon glyphicon-user"></span>Log Out</a></li>
+                </ul>
             </div>
         </div>
-    </header>
-    <!-- pointer arrows -->
+    </nav>
+    <!-- Header Section Ends-->
 
-    <!--Side Nav Bar -->
-    <div id="parent">
-        <div id="cp_menu" class="sideNav">
-            <div id="box1">
-                <div id="box2">
-                    <nav class="sidemenu">
-                        <ul>
-                            <li class="menu-list pointer-arrow activated">
-                                <a href="#" class="a-select active" onclick="return false">
-                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                                    <span>Reception</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-user"></i></span>
-                                    <span>My Visitor</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" id="testBtn" onclick="return false">
-                                    <span><i class="fa fa-user-plus" aria-hidden="true"></i></span>
-                                    <span>Add a Visitor</span>
-                                </a>
-                            </li>
 
-                            <!----------- Edit Here --------------->
-                            <li class="menu-list pointer-arrow" id='slideout'>
-                                <a role="button" class="a-select" onclick="return false">
-				 <span>
-					<i class="fa fa-repeat" aria-hidden="true"></i></span>
-                                    <span>Recurrent Visit</span>
-                                </a>
-                                <!--
-                                  <div class="panel-body">
-                                    <ul class="rainDrops">
-                                        <li class="menu-list2 activia">
-                                            <a href="#" class="a-select2 activia2" onclick="return false">
-                                                <span>
-                                                 <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
-                                             <span>Add Delivery</span>
-                                         </a>
+<!--Main Container Starts Here-->
+<section class="change-section row" style="border:1px solid black">
+    <div class="side-nav col-md-1" style="border:1px solid black">
 
-                                        </li>
-                                       <li class="menu-list2">
-                                         <a href="#" class="a-select2" onclick="return false">
-                                             <span><i class="fa fa-check-square" aria-hidden="true"></i></span>
-                                             <span>Delivery Control</span>
-                                         </a>
-                                        </li>
-                                          <li class="menu-list2">
-                                         <a href="#" class="a-select2" onclick="return false">
-                                             <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
-                                             <span>Approved Visitor</span>
-                                         </a>
-                                        </li>
-                                          <li class="menu-list2">
-                                         <a href="#" class="a-select2" onclick="return false">
-                                             <span>
-                            <i class="fa fa-building-o" aria-hidden="true"></i></span>
-                                             <span>Approved Companies</span>
-                                         </a>
-                                        </li>
-                                      </ul>
-                                  </div> -->
+    </div>
 
-                            </li>
+    <!--This is the div where everything changes- Main content-->
+    <div class="main-content col-md-11" style="border:1px solid black">
+        <ui-view></ui-view>
 
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-ban" aria-hidden="true"></i></span>
-                                    <span>Barred Visitors</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-hourglass-start" aria-hidden="true"></i></span>
-                                    <span> Pending Visitors List</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-                                    <span>Employee Setup</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a class="collapsed a-select" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="return false">
-                                    <span><i class="fa fa-globe" aria-hidden="true"></i></span>
-                                    <span>Site</span>
-                                </a>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="#">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li class="menu-list2 activia">
-                                                <a href="#" class="a-select2 activia2" onclick="return false">
-                                                    <span><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
-                                                    <span>Location</span>
-                                                </a>
-                                            </li>
-                                            <li class="menu-list2">
-                                                <a href="#" class="a-select2" onclick="return false">
-                                                    <span><i class="fa fa-users" aria-hidden="true"></i></span>
-                                                    <span>Reception Area</span>
-                                                </a>
-                                            </li>
-                                            <li class="menu-list2">
-                                                <a href="#" class="a-select2" onclick="return false">
-                                                    <span><i class="fa fa-fire-extinguisher" aria-hidden="true"></i></span>
-                                                    <span>Fire List</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+    </div>
+    <!--Main Content Ends here-->
+</section>
+    <!--Main Container Ends Here-->
 
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
-                                    <span>Reports</span>
-                                </a>
-                            </li>
-                            <li class="menu-list pointer-arrow">
-                                <a href="#" class="a-select" onclick="return false">
-                                    <span><i class="fa fa-id-badge" aria-hidden="true"></i></span>
-                                    <span>Visitor Badging</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+
+
+    <footer class="footer-container" style="border:1px solid black">
+        <div class="footer-links col-md-12 col-xs-12 col-lg-12 col-sm-12">
+
+        </div>
+        <div class="copy-write">
+            <p>
+                <strong>
+                    Entire Site and Content &copy;2017 Wound Care All Rights Reserved.
+                </strong>
+            </p>
+
+            <br/>
+            <p>
+               Very Imp Section
+            </p>
+
         </div>
 
-       <ui-view></ui-view>
+    </footer>
 
-    </div><!-- Parent Container -->
+
 </div>
-
-
-
-
-
-
-

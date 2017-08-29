@@ -26,3 +26,18 @@ body {
   font-size: $font-size;
 }
 
+.main-wrapper{
+  padding: 0px;
+
+}
+
+.navigation{
+
+}
+
+.change-section{
+  margin: 0px;
+  max-height: calc(100% - 220px);
+  min-height: calc(100% - 228px);
+  overflow-y: scroll;
+}
