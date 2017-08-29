@@ -13,8 +13,6 @@
         $stateProvider
 
         // HOME STATES AND NESTED VIEWS ========================================
-
-
             .state('main', {
                 url: '/main',
                 templateUrl: 'app/templates/main.html',
