@@ -8,10 +8,8 @@
 
     function RestangularBaseService(Restangular){
 
-        //http://localhost:3000
-        //http://sldisappuat.olcc.lan/api/
 
-        var newBaseUrl = "http://sldisappuat.olcc.lan/api/";
+        var newBaseUrl = "http://localhost:3000";
 
         Restangular.setBaseUrl(newBaseUrl);
         Restangular.setFullResponse(true);

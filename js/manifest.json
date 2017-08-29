@@ -1,4 +1,4 @@
 {
-  "app.js": "app.b2fa76d0f19ef5ccd2d7.bundle.js",
-  "vendor.js": "vendor.eb8dd5cca1a7ffc8a3c7.bundle.js"
+  "app.js": "app.bundle.js",
+  "vendor.js": "vendor.bundle.js"
 }

@@ -12,11 +12,12 @@ module.exports = {
 
     entry: {
         app: './app.js',
-        vendor: ['angular', 'underscore', 'restangular', 'angular-ui-router', 'bootstrap', 'angular-ui-bootstrap', 'angular-animate', 'angular-sanitize']
+        vendor: ['angular', 'underscore', 'restangular', 'angular-ui-router', 'bootstrap', 'angular-ui-bootstrap', 'angular-animate', 'angular-sanitize','angular-material']
     },
     output: {
         path: path.join(__dirname, "js"),
-        filename: "[name].[chunkhash].bundle.js"
+        filename: "[name].bundle.js"
+        // filename: "[name].[chunkhash].bundle.js"
 
     },
     plugins: [
@@ -46,21 +47,22 @@ module.exports = {
         new WebpackMd5Hash(),
         new InlineManifestWebpackPlugin({
             name: 'webpackManifest'
-        }),
+        })
+        ,
         new HtmlWebpackPlugin({
-            title: '',
-            template: 'index.ejs',
-            filename:'../index.html'
+           title: 'Wound Care Portal',
+           template: 'index.ejs',
+           filename:'../index.html'
         })
 
     ],
     devServer: {
-        hot: true
+        inline: true,
+        port:9001
     },
     resolve: {
         alias: {
-            "underscore": node_dir + "/underscore/underscore-min.js",
-
+            "underscore": node_dir + "/underscore/underscore-min.js"
         }
     }
 };

@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>App Portal</title>
+    <title>Wound Care</title>
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://fonts.google.com/?selection.family=Open+Sans|Oswald|Proza+Libre">
+    <!-- Date range picker -->
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" 	href="https://formden.com/static/cdn/bootstrap-iso.css">
+
+    <!--Font Awesome (added because you use icons in your 	prepend/append)-->
+    <link rel="stylesheet" 	href="https://formden.com/static/cdn/font-	awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>.bootstrap-iso .formden_header h2, .bootstrap-iso 	.formden_header p, .bootstrap-iso form{font-family: 	Arial, Helvetica, sans-serif; color: black}.bootstrap-iso 	form button, .bootstrap-iso form button:hover{color: 	white !important;} .asteriskField{color: red;}</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
     <!--Application CSS-->
     <link rel="stylesheet" type="text/css" href="app/css/sass/main.css">
     
+
 </head>
-<body ng-app="app">
+<body ng-app="woundCare">
 <ui-view></ui-view>
-<script type="text/javascript" src="js/vendor.eb8dd5cca1a7ffc8a3c7.bundle.js"></script><script type="text/javascript" src="js/app.b2fa76d0f19ef5ccd2d7.bundle.js"></script></body>
+<script type="text/javascript" src="js/vendor.bundle.js"></script><script type="text/javascript" src="js/app.bundle.js"></script></body>
 </html>

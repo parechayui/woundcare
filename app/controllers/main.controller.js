@@ -1,13 +1,11 @@
-/**
- * Created by pmathode on 10/26/2016.
- */
 
 'use strict';
 
- MainController.$inject = [];
+MainController.$inject = ['$state'];
 
-function MainController() {
+function MainController($state) {
     var vm=this;
+    vm.state=$state.current.name;
 
 
 }

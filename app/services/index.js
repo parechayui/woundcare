@@ -1,9 +1,9 @@
 'use strict';
 
 angular
-    .module('app')
+    .module('woundCare')
     .factory('RestangularBaseService', require('./restangularbase.service'));
 
 angular
-    .module('app')
+    .module('woundCare')
     .factory('RequestRestApi', require('./requestRestApi.service'));
