@@ -31,7 +31,6 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  /* Negative indent footer by it's height */
   margin: 0 auto -60px;
 
 
@@ -49,8 +48,15 @@ body {
 .sidenav {
   padding-top: 20px;
   background-color: #b1aaaa;
+  min-height: 100%;
+  height: auto !important;
   height: 100%;
 }
+
+.change-section{
+  margin-top:50px;
+}
+
 
 /* Set black background color, white text and some padding */
 footer {
