@@ -7,3 +7,7 @@ angular
 angular
     .module('woundCare')
     .factory('RequestRestApi', require('./requestRestApi.service'));
+
+angular
+    .module('woundCare')
+    .factory('CommonService', require('./commonService.service'));

@@ -1,4 +1,3 @@
-
 (function () {
     'use strict';
     angular.module('woundCare').config(function ($stateProvider, $urlRouterProvider) {
@@ -17,16 +16,35 @@
                 url: '/main',
                 templateUrl: 'app/templates/main.html',
                 controller: 'mainController as mainCtrl',
-                abstract:true
+                abstract: true
             })
-                .state('main.patientlist', {
-                    url: '/patientlist',
-                    templateUrl: 'app/templates/patientlist.html',
-                    controller: 'patientListController as listCtrl'
-                }
+            .state('main.patientlist', {
+                url: '/patientlist',
+                templateUrl: 'app/templates/patientlist.html',
+                controller: 'patientListController as listCtrl'
+            })
+            .state('main.newpatient', {
+                url: '/newpatient',
+                templateUrl: 'app/templates/newpatient.html',
+                controller: 'newPatientController as newPatientCtrl'
+            })
+        .state('main.woundcare', {
+                url: '/woundcare',
+                templateUrl: 'app/templates/woundcare.html',
+                controller: 'woundCareController as woundCareCtrl'
+            })
+            .state('main.physicalexam', {
+                url: '/physicalexam',
+                templateUrl: 'app/templates/physicalexam.html',
+                controller: 'physicalExamController as physicalExamCtrl'
+            })
+            .state('main.investigationreview', {
+                url: '/investigationreview',
+                templateUrl: 'app/templates/investigationreview.html',
+                controller: 'investigationreviewController as investigationReviewCtrl'
+            })
 
-            );
-
+        ;
 
 
         var user = {

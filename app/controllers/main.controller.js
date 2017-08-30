@@ -1,10 +1,12 @@
-
 'use strict';
 
 MainController.$inject = ['$state'];
 
 function MainController($state) {
-    var vm=this;
+    var vm = this;
+    vm.createNewPatient = function () {
+        $state.go('main.newpatient', {});
+    };
 
 
 }
