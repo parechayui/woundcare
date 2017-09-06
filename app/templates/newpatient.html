@@ -1,18 +1,354 @@
 <div class="col-md-12">
-<div class="col-md-6">
-Section 1
-</div>
-    <div class="col-md-6">
-        Section 2
+    <div class="col-md-12">
+    
     </div>
+<div class="col-md-6 generalInformation">
+<!-- General Information Section -->
+    <div class="secGI1">
+        <form>
+            <div class="form-group name-1">
+                <label class="upper-label" for="inputFirstName">First Name</label>
+                <input class="form-control pat-Name1" placeholder="First Name" type="text" id="inputFirstName" />
+            </div>
+            <div class="form-group name-2">
+               <label class="upper-label" for="inputLastName">Last Name</label>
+                <input class="form-control pat-Name2" placeholder="Last Name" type="text" id="inputLastName" />
+            </div>
+            <div class="form-group roomNum">
+               <label class="upper-label" for="inputLastName">Room Number</label>
+                <input class="form-control pat-Room" placeholder="Room #" type="text" id="inputLastName" />
+            </div>    
+            <hr class="thinBreak"/>
+            <div class="gender">
+                <label class="genderlabel">Gender</label>
+              <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="1" />Male
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="2" />Female
+                </label>
+            </div>
+            <div class=" form-group birthdate">
+                <label class="birthlabel">D.O.B</label> 
+                <div class="input-group date-selection">
+       				<div class="input-group-addon">
+       				 <i class="fa fa-calendar"></i>
+       				</div>
+       				<input class="form-control" id="date" name="date" 				placeholder="MM/DD/YYYY" type="text"/>
+      		    </div>
+                <div class="allergies">
+                <form>
+                    <select class="form-control allerDD">
+                        <option>Hispanic</option>
+                        <option>White</option>
+                        <option>Afro American</option>
+                    </select>
+                </form>
+            </div><!--End of AllergyDD-->
+               
+            </div>
+        </form>  
+    </div><!--End of GI 1-->
 </div>
+    
+    <div class="col-md-6 languageEthnicity">
+        <div class="secG12">
+            <div class="col-md-6 firsthalf">
+            <div class="prefLangDD">
+                <label class="upper-label" for="inputLastName">Prefered Language</label>
+                <form>
+                    <select class="form-control DropD">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                        <option>Italian</option>
+                        <option>German</option>
+                    </select>
+                </form>
+            </div><!--End of prefLangDD-->
+            <div class="raceDD">
+                <label class="upper-label" for="inputLastName">Race</label>
+                <form>
+                    <select class="form-control DropD">
+                        <option>Hispanic</option>
+                        <option>White</option>
+                        <option>Afro American</option>
+                    </select>
+                </form>
+            </div><!--End of raceDD-->
+            <div class="ethDD">
+                <label class="upper-label" for="inputLastName">Ethnicity</label>
+                <form>
+                    <select class="form-control DropD">
+                        <option>Not Hispanic or Latino</option>
+                        <option>Hispanic or Latino</option>
+                        <option>Declined</option>
+                    </select>
+                </form>
+            </div><!--End of raceDD-->
+        </div><!--End of first half of this container-->
+           <div class="col-md-6 sechalf">
+            <div class="contactMethod">
+                <label class="contact">Prefered method of contect:</label>
+                <form class="checkDis">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="email" />
+                        Email
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="phone" />
+                        Telephone
+                    </label>
+                </form>
+                <label class="review">Medication Review: </label>
+                <form class="checkDis">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="mediReview" />
+                        Medication Review
+                    </label>
+                </form>
+            </div>
+        </div>
+            
+        </div><!--End of GI 2-->
+    </div>
+</div><!--End of first half-->
 <div class="col-md-12">
-    <div class="col-md-6">
-        Section 3
+    <div class="col-md-6 documentSection">
+         <div class="secGI3">
+             <h>Refering Physician</h>
+             <form>
+            <div class="form-group name-4">
+                <label class="upper-label" for="inputDrLastName">Last Name</label>
+                <input class="form-control pat-Name1" placeholder="Dr Last Name" type="text" id="inputDrLastName" />
+            </div>
+             </form>
+             <form class="checkbx">
+                    <label class="checkbox-inline drCheckBox">
+                        <input type="checkbox" value="physician" />
+                        Primary Physician
+                    </label>
+             </form>
+             <hr class="thinBreak2"/>
+             <div class="documentSec">
+                 <h4>Documents</h4>
+                 
+                 
+                    <div class="row">
+             <!-- image section-->
+        <div class="col-lg-6 mdTopColumnL">
+            <span class="newer">Upload Face Sheet</span>
+         <img class="mainLogo"src='' height='40' width='30' id='img' >
+         <!--<input class="mainIMGtext" type="file"  onchange="imagepreview(this);" /> -->
+            
+            <input id= "in-btn" type="file"  onchange="imagepreview(this);" />
+            
+        </div>
+                          
+         <div class="col-lg-6 mdTopColumnR">
+             <span class="newer2">Concent Document</span>
+             <img class="mainIcon" src='' height='40' width='30' id='iconimg' >
+             <input id="in-btn2" type="file" onchange="iconpreview(this);" />   
+        </div>
+                </div>
+                 
+                 <div class="anticoagDD">
+                     
+                <label class="upper-label" for="inputLastName">Anticoagulant</label>
+                <form>
+                    <select class="form-control antiDropD">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+                     <form class="dbcheckbx">
+                    <label class="checkbox-inline dbCheckBox">
+                        <input type="checkbox" value="diabetic" />
+                        Diabetic
+                    </label>
+             </form>
+                </div> <!--End of AnticaogDD-->
+             </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        Section 4
-        <button type="button" class="btn btn-primary" ng-click="newPatientCtrl.goToPatientList()">Save and Exit</button>
-        <button type="button" class="btn btn-primary" ng-click="newPatientCtrl.goToWoundCare()">Next</button>
+    <div class="col-md-6 dropdownSection">
+        <div class="col-md-6 contDwnL"> 
+            <div class="pmhDpDwn dropDlist1">
+                <label class="upper-label" for="inputMedHist">Past Medical History</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of pmhDpDwn-->
+            <div class="fhDpDwn dropDlist1">
+                <label class="upper-label" for="inputFamHist">Family History</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of fhDpDwn-->
+            <div class="vaccDpDwn dropDlist1">
+                <label class="upper-label" for="inputVaccine">Pneumococcal Vaccine</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of vaccDpDwn-->
+            <div class="fraDpDwn dropDlist1">
+                <label class="upper-label" for="inputFallRisk">Fall Risk Assessment</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of fraDpDwn-->
+            <div class="shDpDwn dropDlist1">
+                <label class="upper-label" for="inputSocHistory">Social History</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of shDpDwn-->
+            <div class="giDpDwn dropDlist1">
+                <label class="upper-label" for="inputGI">GI</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of giDpDwn-->
+            
+            <button type="button" class="btn btn-primary saveExit1" ng-click="newPatientCtrl.goToPatientList()">Save and Exit</button>
+            <form class="dbcheckbx">
+                    <label class="checkbox-inline dbCheckBox revBtn">
+                        <input type="checkbox" value="review" />
+                        Review
+                    </label>
+             </form>
+        
+        </div>
+        
+        <div class="col-md-6 dropDwnR">
+            <div class="appetite dropDlist1">
+                <label class="upper-label" for="inputAppetite">Appetite</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of AppetiteDpDwn-->
+            <div class="supDpDwn dropDlist1">
+                <label class="upper-label" for="inputSuppliments">Suppliments</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of SupplimentsDpDwn-->
+            <div class="muscDpDwn dropDlist1">
+                <label class="upper-label" for="inputMusculoskeletal">Musculoskeletal</label>
+                <form>
+                    <select class="form-control DropDwnL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of MusculoskeletalDpDwn-->
+            <div class="supsection">
+            <h5 class="suppServetitle">Support Service</h5>
+            <hr class="thinBreak2"/>
+            
+            <div class="supServ dropDlist1 beds">
+                <label class="upper-label" for="inputBed">Bed</label>
+                <form>
+                    <select class="form-control DropDwnShort">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div>
+            <div class="chairselect chairs">
+                <label class="upper-label" for="inputChair">Chair</label>
+                <form>
+                    <select class="form-control DropDwnShort">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div>
+            </div><!--End of supSection--> 
+            
+            <div class="supServ dropDlist1 feets">
+                <label class="upper-label" for="inputFeet">Feet</label>
+                <form>
+                    <select class="form-control DropDwnShort">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-primary nextBtn" ng-click="newPatientCtrl.goToWoundCare()">Next</button>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

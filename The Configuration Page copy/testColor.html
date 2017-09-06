@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Picker Demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="color-picker.css" />
+		<script src="http://zeptojs.com/zepto.min.js"></script>
+		<script src="color-picker.js"></script>
+	</head>
+	<body>
+		
+		<fieldset class="color-picker">
+			<select class="format">
+				<option selected>Hex</option>
+				<option>RGB</option>
+				<option>HSL</option>
+			</select>
+			<input class="color" type="text" value="#eecb9b" />
+			<div class="spectrum">
+				<div>
+					<div class="pin"></div>
+				</div>
+			</div>
+			<input class="luminosity" type="range" min="0" max="100" />
+		</fieldset>
+	</body>
+</html>

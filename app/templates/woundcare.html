@@ -1,20 +1,384 @@
 <div class="col-md-12">
 
-    <div class="col-md-3">
+    <div class="col-md-3 woundPaine">
+        
+            <div class="woundCareHeader">
+                 <div class="col-lg-12 drawer">  
+                 <a class="newWnd" href=""><h2 class="woundTitle">Add Wounds</h2></a>
+            
+                 </div>
+           </div>
+        
+        
+           <div class="wcWindowPaine"> <!--Wound TABS-->
+                <!--Create A bUTTN-->
+                <button type="button" class="btn btn-primary woundBtn" ng-click="">Wound 1</button>
 
+                
+            </div> 
+     </div><!-- End of wound Paine-->
+
+    
+    <div class="col-md-3 woundDropdn"><!--Wound Drop Downs-->
+        <div class="woundd">
+            <h4>Wound 1</h4>
+           
+        </div>
+         <div class="etiDpDwn dropDlist1">
+                <label class="upper-label" for="inputEtiology">Etiology</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of Etiology-->
+            <div class="blocDpDwn dropDlist1 drpWl loDpDn">
+                <div class="preselectRadio">
+                 <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="1" />L
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="2" />R
+                </label>
+                </div>
+                
+                <div class="bodyloDropdown">
+                <label class="upper-label" for="inputBodyLocation">Body Location</label>
+                <form>
+                    <select class="form-control DropDwnWL bodyLo">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+                </div>
+                
+            </div><!--End of shDpDwn-->
+            <div class="disDpDwn dropDlist1">
+                <label class="upper-label" for="inputDiscription">Discription</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DiscriptionDpDwn-->
+       <div class="sides"> <!--Side by Side-->
+        <div class=" stageDpDwn dropDlist1">
+                <label class="upper-label" for="inputStage">Stage</label>
+                <form>
+                    <select class="form-control DropDwnWL2">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+           </div>
+           <div class=" dayTracker">
+            
+                <label class="upper-label" for="inputDays">Duration (day)</label>
+                <input class="form-control dayCounter" placeholder="Duration" type="text" id="durationCounter" />
+         
+            
+            </div><!--End of Stage Hidden DpDwn-->
+        </div>
+        <hr />
+         <div class=" distance blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputObjective">Objective</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+        
+        <div class="size">
+            <div class=" sizeIntL">
+            
+                <label class="upper-label" for="inputLength">Length</label>
+                <input class="form-control numbox" placeholder="L" type="text" id="wclength" />
+           </div>
+            <div class=" sizeIntW">
+            
+                <label class="upper-label" for="inputWidth">Width</label>
+                <input class="form-control numbox" placeholder="W" type="text" id="wcWidth" />
+            </div>
+            <div class=" sizeIntD">
+            
+                <label class="upper-label" for="inputDepth">Depth</label>
+                <input class="form-control numbox" placeholder="D" type="text" id="depth" />
+            </div>
+        
+        </div><!--End of Size-->
+        
+        <div class="exucateSec">
+              <div class=" excdatedd blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputExudate">Exudate</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+              <div class=" amountdd blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputAmount">Amount</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+        </div><!---End of Exudate / Amount --->
+        
+        <div class="underMin">
+            <div class=" uncm">
+            
+                <label class="upper-label" for="inputUndermingCm">Undermining cm</label>
+                <input class="form-control numbox" placeholder="cm" type="text" id="wclength" />
+           </div>
+            <div class=" timeAm">
+            
+                <label class="upper-label" for="inputTime">Time</label>
+                <input class="form-control numbox" placeholder="am" type="text" id="wcWidth" />
+            </div>
+        </div>   
+    </div><!--End of wound Drop Down-->
+
+    <div class="col-md-3 wcTissue">
+        <div class=" wcTissueSelect">
+            <h5 class="tishHeader">Tissue:</h5>
+             <div class="tishBoxsize">
+            <div class=" mod1">
+            
+                <label class="intlable" for="inputLength">Length</label>
+                <label class="intlable" for="inputWidth">Width</label>
+                <label class="intlable" for="inputDepth">Depth</label>
+           </div>
+            <div class=" mod2">
+                <input class="form-control numbox1"  placeholder="%" type="text" id="wclength" />
+                <input class="form-control numbox1" placeholder="%" type="text" id="wcWidth" />
+                <input class="form-control numbox1" placeholder="%" type="text" id="depth" />
+            </div>
+        </div>
+            <div class="tissueDpDn">
+                <div class="otherDropDn">
+                <label class="upper-label" for="inputObjective">Objective</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+             </div>
+                <div class=" mod3">
+                <input class="form-control numbox1"  placeholder="%" type="text" id="wcOther" />
+                </div>  
+            </div>
+            <div class="skinPercent">
+                <div class="scabchkbx">
+                <form class="diabeticbox">
+                    <label class="checkbox-inline dbCheckBox">
+                        <input type="checkbox" value="diabetic" />
+                        Diabetic
+                    </label>
+             </form>
+                </div>
+                <div class=" modSkin">
+                <input class="form-control numbox1"  placeholder="%" type="text" id="wclength" />
+                </div>
+            </div>
+            <p class="numLabel">Must Equal 100</p>
+            
+        </div><!--End of Tisuue Section-->
+             
+        
+        <div class="wcDebridement">
+        
+         <div class="exucateSec blist">
+              <div class=" excdatedd blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputBlister">Blister</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+              <div class=" amountdd blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputPeriwound">Periwound</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+        </div><!---End of blisteer / per --->
+            
+            
+            <div class="exucateSec blist">
+              <div class="debridement">
+                <label class="debelabel">Debridement</label>
+              <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="1" />Yes
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="2" />No
+                </label>
+            </div>
+              <div class=" amountdd blocDpDwn dropDlist1 drpWl debReason">
+                <label class="upper-label" for="inputReason">Reason</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of DpDwn-->
+        </div><!---End of blisteer / per --->
+            
+            <div class="exucateSec">
+              <div class="debridement biops">
+                <label class="cauterization">Biopsy</label>
+              <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="1" />Yes
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="2" />No
+                </label>
+            </div>
+             <div class="debridement cauter">
+                <label class="cauterization">Cauterization</label>
+              <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="1" />Yes
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="radioGroup" value="2" />No
+                </label>
+            </div>
+        </div><!---End of blisteer / per --->
+             <div class="etiDpDwn dropDlist1 wcProgress">
+                <label class="upper-label" for="inputWoundProgess">Wound Progess</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of Etiology--> 
+        </div>
+        <button type="button" class="btn btn-primary saveExit2" ng-click="woundCareCtrl.goToPatientList()">Save and Exit</button>
+    
+    </div> <!--End of Tissue/ Deb sec-->
+    
+
+    
+    
+    
+    <div class="col-md-3 dressing">
+        <div class="dressingSec">
+            <h5 class="dresHeader">Dressing:</h5>
+            <div class="etiDpDwn dropDlist1">
+                <label class="upper-label" for="inputEtiology">Continue</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div><!--End of Etiology-->
+            <div class="blocDpDwn dropDlist1 drpWl">
+                <label class="upper-label" for="inputBodyLocation">Discontinue</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div><!--End of shDpDwn-->
+            <div class="disDpDwn dropDlist1">
+                <label class="upper-label" for="inputDiscription">Start</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </form>
+            </div><!--End of DiscriptionDpDwn-->
+            
+            
+        
+        </div>
+        <div class="freDpDwn dropDlist1">
+                <label class="upper-label" for="inputFreuency">Frequency</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of Etiology-->
+        <div class="etiDpDwn dropDlist1">
+                <label class="upper-label" for="inputRecomendation">Recomendation</label>
+                <form>
+                    <select class="form-control DropDwnWL">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                    </select>
+                </form>
+            </div><!--End of Etiology-->
+      
+         
+        
     </div>
-
-    <div class="col-md-3">
-
-    </div>
-
-    <div class="col-md-3">
-        <button type="button" class="btn btn-primary" ng-click="woundCareCtrl.goToPatientList()">Save and Exit</button>
-    </div>
-
-    <div class="col-md-3">
-        <button type="button" class="btn btn-primary" ng-click="woundCareCtrl.goToInvestigationReview()">Next</button>
-    </div>
-
+<button type="button" class="btn btn-primary nxBtn " ng-click="woundCareCtrl.goToInvestigationReview()">Next</button>
+<button type="button" class="btn btn-primary bkBtn" ng-click="">Back</button>
 
 </div>

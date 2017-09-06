@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>Select Form Test</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<style>
+	
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+
+</div>
+
+
+<!-- Select tab -->
+<h2 class="demoHeaders">Select NDA</h2>
+<select id="newselectmenu">
+	<option>Form 1</option>
+	<option>Form 2</option>
+	<option>Form 3</option>
+	<option>Form 4</option>
+	<option>Form 5</option>
+</select>
+
+
+</div>
+
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+
+var availableTags = [
+    "JavaScript",	
+];
+$( "#newselectmenu" ).selectmenu();
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+</body>
+</html>

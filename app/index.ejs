@@ -18,16 +18,158 @@
 
     <!-- Inline CSS based on choices in "Settings" tab -->
     <style>.bootstrap-iso .formden_header h2, .bootstrap-iso 	.formden_header p, .bootstrap-iso form{font-family: 	Arial, Helvetica, sans-serif; color: black}.bootstrap-iso 	form button, .bootstrap-iso form button:hover{color: 	white !important;} .asteriskField{color: red;}</style>
-
+   
+    
+    
+    
+    
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+    <!-- Data Tabels -->
+	 <link href="dataTables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+	<link href="dataTables/css/dataTables.jqueryui.css" rel="stylesheet">
+    
+    
 
     <!--Application CSS-->
     <link rel="stylesheet" type="text/css" href="app/css/sass/main.css">
     <%=htmlWebpackPlugin.files.webpackManifest%>
+    
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    
+    
+    <!-- Jquery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+  <!--  <script type="text/jscript" src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
+    <link rel="stylesheet"  href="http//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">-->
+    
 
 </head>
 <body ng-app="woundCare">
 <ui-view></ui-view>
+    
+   
+    
+    <!-- Include Date Range Picker -->
+	<script type="text/javascript" 	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-	datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+      </script> 
+    
+    <!-- Retrieve Files -->
+     <script type="text/javascript">
+    function imagepreview(input) {
+        if (input.files && input.files[0]) {
+        var filerd = new FileReader();
+            filerd.onload=function (e) {
+                var img = document.getElementById('img');         img.setAttribute('src',e.target.result);
+            }
+            filerd.readAsDataURL(input.files[0]);
+            return false;
+        }
+    }
+    </script>
+   <script type="text/javascript">
+    function iconpreview(input) {
+        if (input.files && input.files[0]) {
+        var myfilerd = new FileReader();
+            myfilerd.onload=function (e) {
+                var img = document.getElementById('iconimg');         iconimg.setAttribute('src',e.target.result);
+            }
+            myfilerd.readAsDataURL(input.files[0]);
+            return false;
+        }
+    }
+    </script>
+    
+                <!-- input image hover button -->
+<script>
+$(document).ready(function(){
+    $("#in-btn").hover(function(){
+        $(".newer").addClass("blue-blue");
+    });
+    $("#in-btn").mouseleave(function(){
+        $(".newer").removeClass("blue-blue");
+    });
+});            
+</script>
+            
+<script>
+$(document).ready(function(){
+    $("#in-btn2").hover(function(){
+        $(".newer2").addClass("new-blue");
+    });
+    $("#in-btn2").mouseleave(function(){
+        $(".newer2").removeClass("new-blue");
+    });
+});            
+</script>
+    
+    
+ <!-- Data Table -->
+    <script src="dataTables/js/jquery.js"></script>
+	<script src="dataTables/js/dataTables.bootstrap.min.js"></script>
+	<script src="dataTables/js/jquery.dataTables.min.js"></script>
+	<!--<script>
+	  $('#myData').dataTable();
+	  </script>
+	<script>
+	  $('#myData2').dataTable();
+	  </script>  -->
+    
+    <script>
+    $("#patientsData").dataTable();        
+    </script>
+    
+    
+    
+    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
