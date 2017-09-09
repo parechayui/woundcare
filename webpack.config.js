@@ -12,7 +12,7 @@ module.exports = {
 
     entry: {
         app: './app.js',
-        vendor: ['angular', 'underscore', 'restangular', 'angular-ui-router', 'bootstrap', 'angular-ui-bootstrap', 'angular-animate', 'angular-sanitize','angular-material']
+        vendor: ['angular', 'underscore', 'restangular', 'angular-ui-router', 'bootstrap', 'angular-ui-bootstrap', 'angular-animate', 'angular-sanitize','angular-material','angular-touch','angular-ui-grid']
     },
     output: {
         path: path.join(__dirname, "js"),
