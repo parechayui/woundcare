@@ -15,6 +15,7 @@
     						<li role="separator" class="divider"></li>
     						<li><a href="#">Home</a></li>
   						</ul>
+
 						</div>	
 						</div><!-- Dropdown menu -->
         <button type="button" class="btn btn-primary newPatientBtn" ng-click="listCtrl.createNewPatient()">New Patient</button>
@@ -26,10 +27,10 @@
                 
                 <ul class="nav nav-tabs">
 						  <li class="active">
-						   	<a href="#scheduleVisit" data-toggle="tab">Active Patients</a>
+						   	<a href="#scheduleVisit" data-toggle="tab" ng-click="listCtrl.changeList('active')">Active Patients</a>
 						  </li>
 						  <li>
-						   	<a href="#currentVisit" data-toggle="tab">Inactive Patients</a>
+						   	<a href="#currentVisit" data-toggle="tab" ng-click="listCtrl.changeList('inactive')">Inactive Patients</a>
 						  </li>
 					  
 					  </ul> <!-- End Tab Nav -->
@@ -38,7 +39,7 @@
 				<div class="tab-content">
 				  <!-- Tables Begin here -->
 
-					<div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ng-click="getRow()" class="col-md-12 grid"></div>
+					<div ui-grid="listCtrl.gridOptions" ui-grid-pagination ui-grid-selection ng-click="listCtrl.getRow()" class="col-md-12 grid"></div>
 
 				</div><!-- Ent of tab Content -->
                 
@@ -47,7 +48,7 @@
         </div> <!-- End of the Data table section-->
     </div>
     <div class="col-md-3 startVisitBtn">
-        <h4 class="pName">{{rowtobebinded}}</h4>
+        <h4 class="pName">{{listCtrl.rowtobebinded}}</h4>
         <br>
         <hr class="style1">
         <button type="button" class="btn btn-primary startVistBtn" ng-click="listCtrl.updatePatient()">Start Visit</button> 

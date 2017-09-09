@@ -133,7 +133,7 @@ angular
 angular
     .module('woundCare')
     .constant('RestEndPoint', {
-        NOR:'Reservation/NormalReservation'
+        PatientList:'plist'
 
     });
 
@@ -285,102 +285,103 @@ module.exports = NewPatientController;
 "use strict";
 
 
+PatientListController.$inject = ['$state', '$http', 'uiGridConstants', 'RequestRestApi'];
 
-PatientListController.$inject = ['$state','$scope','$http', 'uiGridConstants'];
-
-function PatientListController($state,$scope,$http, uiGridConstants) {
-    var vm=this;
-
+function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
+    var vm = this;
+    vm.data = {};
+    vm.list = {
+        active: true
+    };
     var paginationOptions = {
         pageNumber: 1,
         pageSize: 25,
         sort: null
     };
 
-    $scope.gridOptions = {
+    vm.gridOptions = {
         paginationPageSizes: [25, 50, 75],
         paginationPageSize: 25,
         useExternalPagination: true,
         useExternalSorting: true,
-        enableFullRowSelection : true,
+        enableFullRowSelection: true,
         enableRowSelection: true,
         columnDefs: [
-            { name: 'First Name' },
-            { name: 'Last Name', enableSorting: false },
-            { name: 'Last Visit', enableSorting: false },
-            { name: 'Follow Up', enableSorting: false },
-            { name: 'Status', enableSorting: false }
+            {name: 'First Name', enableSorting: false},
+            {name: 'Last Name', enableSorting: false},
+            {name: 'Last Visit', enableSorting: false},
+            {name: 'Follow Up', enableSorting: false},
+            {name: 'Status', enableSorting: false}
         ],
-       multiSelect :false,
+        multiSelect: false,
+        onRegisterApi: function (gridApi) {
+            vm.gridApi = gridApi;
 
-        onRegisterApi: function(gridApi) {
-            $scope.gridApi = gridApi;
 
-            $scope.gridApi.core.on.sortChanged($scope, function(grid, sortColumns) {
-                if (sortColumns.length == 0) {
-                    paginationOptions.sort = null;
-                } else {
-                    paginationOptions.sort = sortColumns[0].sort.direction;
-                }
-                getPage();
-            });
-            gridApi.pagination.on.paginationChanged($scope, function (newPage, pageSize) {
+            gridApi.pagination.on.paginationChanged(vm, function (newPage, pageSize) {
                 paginationOptions.pageNumber = newPage;
                 paginationOptions.pageSize = pageSize;
-                getPage();
+
+            });
+        }
+
+    };
+
+
+    vm.getRow = function (index) {
+        vm.gridApi.selection.selectRow(index);
+        var selRow = vm.gridApi.selection.getSelectedRows();
+        vm.rowtobebinded = selRow[0]["First Name"] + " " + selRow[0]['Last Name'];
+    };
+
+    vm.changeList = function (listVal) {
+        if (listVal === 'active') {
+            vm.list.active = true;
+            getDifferList();
+        }
+        else {
+            vm.list.active = false;
+            getDifferList();
+        }
+    };
+
+
+    var getDifferList = function () {
+        var finalList = [];
+        var firstRow = (paginationOptions.pageNumber - 1) * paginationOptions.pageSize;
+        if (vm.list.active) {
+            angular.forEach(vm.data, function (val, key) {
+                if (val.Status === "Active") {
+                    finalList.push(val);
+                }
             });
 
-
-
-
-
-
-
-
+            vm.gridOptions.data = finalList.slice(firstRow, firstRow + paginationOptions.pageSize);
+        } else {
+            angular.forEach(vm.data, function (val, key) {
+                if (val.Status === "Inactive") {
+                    finalList.push(val);
+                }
+            });
+            vm.gridOptions.data = finalList.slice(firstRow, firstRow + paginationOptions.pageSize);
         }
+    };
+
+    var PatientListInfoCallback = function (results) {
+        vm.gridOptions.totalItems = 100;
+
+        vm.data = results.data;
+        getDifferList();
 
     };
 
+    RequestRestApi.PatientListInfo(PatientListInfoCallback);
 
-    $scope.getRow=function(index){
-        $scope.gridApi.selection.selectRow(index);
-        var selRow=$scope.gridApi.selection.getSelectedRows();
-        $scope.rowtobebinded=selRow[0]["First Name"]+" "+selRow[0]['Last Name'];
-    };
-
-    var getPage = function() {
-        var url;
-        switch(paginationOptions.sort) {
-            case uiGridConstants.ASC:
-                url = 'json/main.json';
-                break;
-            case uiGridConstants.DESC:
-                url = 'json/main.json';
-                break;
-            default:
-                url = 'json/main.json';
-                break;
-        }
-        $http.get(url).then(successCallback, errorCallback);
-
-        function successCallback(results){
-            //success code
-            $scope.gridOptions.totalItems = 100;
-            var firstRow = (paginationOptions.pageNumber - 1) * paginationOptions.pageSize;
-            $scope.gridOptions.data = results.data.slice(firstRow, firstRow + paginationOptions.pageSize);
-        }
-        function errorCallback(error){
-            //error code
-        }
-
-    };
-
-    getPage();
     vm.createNewPatient = function () {
         $state.go('main.newpatient', {});
     };
 
-    vm.updatePatient=function(){
+    vm.updatePatient = function () {
         $state.go('main.newpatient', {});
     };
 }
@@ -512,28 +513,19 @@ module.exports = CommonService;
 /* RestAngular factory Starts  */
 
 
-RequestRestApi.$inject = ['RestangularBaseService'];
+RequestRestApi.$inject = ['RestangularBaseService','RestEndPoint'];
 
-function RequestRestApi(RestangularBaseService) {
+function RequestRestApi(RestangularBaseService,RestEndPoint) {
 
-    var AccountInfo = function (AccountInfoCallback) {
-        RestangularBaseService.getdata("db", AccountInfoCallback);
+    var PatientListInfo = function (PatientListInfoCallback) {
+        RestangularBaseService.getdata(RestEndPoint.PatientList, PatientListInfoCallback);
     };
 
-    var ResortListInfo= function (ResortListInfoCallback) {
-        RestangularBaseService.getdata("db", ResortListInfoCallback);
-    };
 
-    var DestinationListInfo= function (url,DestinationListInfoCallback) {
-        RestangularBaseService.getdata(url, DestinationListInfo);
-    };
+
 
     return {
-        ResortListInfo:ResortListInfo,
-        AccountInfo: AccountInfo,
-        DestinationListInfo:DestinationListInfo
-
-
+       PatientListInfo: PatientListInfo
     };
 };
 /* RestAngular Factory Ends  */
@@ -557,7 +549,7 @@ module.exports = RequestRestApi;
     function RestangularBaseService(Restangular){
 
 
-        var newBaseUrl = "http://localhost:3000";
+        var newBaseUrl = "http://localhost:3000/";
 
         Restangular.setBaseUrl(newBaseUrl);
         Restangular.setFullResponse(true);

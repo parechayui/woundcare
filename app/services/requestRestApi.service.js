@@ -3,28 +3,19 @@
 /* RestAngular factory Starts  */
 
 
-RequestRestApi.$inject = ['RestangularBaseService'];
+RequestRestApi.$inject = ['RestangularBaseService','RestEndPoint'];
 
-function RequestRestApi(RestangularBaseService) {
+function RequestRestApi(RestangularBaseService,RestEndPoint) {
 
-    var AccountInfo = function (AccountInfoCallback) {
-        RestangularBaseService.getdata("db", AccountInfoCallback);
+    var PatientListInfo = function (PatientListInfoCallback) {
+        RestangularBaseService.getdata(RestEndPoint.PatientList, PatientListInfoCallback);
     };
 
-    var ResortListInfo= function (ResortListInfoCallback) {
-        RestangularBaseService.getdata("db", ResortListInfoCallback);
-    };
 
-    var DestinationListInfo= function (url,DestinationListInfoCallback) {
-        RestangularBaseService.getdata(url, DestinationListInfo);
-    };
+
 
     return {
-        ResortListInfo:ResortListInfo,
-        AccountInfo: AccountInfo,
-        DestinationListInfo:DestinationListInfo
-
-
+       PatientListInfo: PatientListInfo
     };
 };
 /* RestAngular Factory Ends  */

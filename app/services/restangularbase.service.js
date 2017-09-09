@@ -9,7 +9,7 @@
     function RestangularBaseService(Restangular){
 
 
-        var newBaseUrl = "http://localhost:3000";
+        var newBaseUrl = "http://localhost:3000/";
 
         Restangular.setBaseUrl(newBaseUrl);
         Restangular.setFullResponse(true);
