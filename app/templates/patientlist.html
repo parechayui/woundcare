@@ -38,7 +38,7 @@
 				<div class="tab-content">
 				  <!-- Tables Begin here -->
 
-					<div ui-grid="gridOptions" ui-grid-pagination class="col-md-12 grid"></div>
+					<div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ng-click="getRow(index)" class="col-md-12 grid"></div>
 
 				</div><!-- Ent of tab Content -->
                 
@@ -47,7 +47,7 @@
         </div> <!-- End of the Data table section-->
     </div>
     <div class="col-md-3 startVisitBtn">
-        <h4 class="pName">Patients Name</h4>
+        <h4 class="pName">{{rowtobebinded}}</h4>
         <br>
         <hr class="style1">
         <button type="button" class="btn btn-primary startVistBtn" ng-click="listCtrl.updatePatient()">Start Visit</button> 

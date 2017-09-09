@@ -192,7 +192,7 @@ return{replace:!0,restrict:"E",template:a.get("ui-grid/treeBaseRowHeaderButtons"
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-angular.module('woundCare',  ['ui.router','ngAnimate', 'ngSanitize', 'ui.bootstrap','restangular','ui.grid','ui.grid.pagination']);
+angular.module('woundCare',  ['ui.router','ngAnimate', 'ngSanitize', 'ui.bootstrap','restangular','ui.grid','ui.grid.pagination','ui.grid.selection']);
 
 __webpack_require__(5);
 __webpack_require__(7);
@@ -302,6 +302,8 @@ function PatientListController($state,$scope,$http, uiGridConstants) {
         paginationPageSize: 25,
         useExternalPagination: true,
         useExternalSorting: true,
+        enableFullRowSelection : true,
+        enableRowSelection: true,
         columnDefs: [
             { name: 'First Name' },
             { name: 'Last Name', enableSorting: false },
@@ -309,8 +311,11 @@ function PatientListController($state,$scope,$http, uiGridConstants) {
             { name: 'Follow Up', enableSorting: false },
             { name: 'Status', enableSorting: false }
         ],
+       multiSelect :false,
+
         onRegisterApi: function(gridApi) {
             $scope.gridApi = gridApi;
+
             $scope.gridApi.core.on.sortChanged($scope, function(grid, sortColumns) {
                 if (sortColumns.length == 0) {
                     paginationOptions.sort = null;
@@ -324,7 +329,34 @@ function PatientListController($state,$scope,$http, uiGridConstants) {
                 paginationOptions.pageSize = pageSize;
                 getPage();
             });
+            $scope.gridApi.grid.modifyRows($scope.gridOptions.data);
+            $scope.gridApi.selection.selectRow($scope.gridOptions.data[0]);
+            var rows = $scope.gridApi.selection.getSelectedRows();
+
+            //aravind's code to get the selected row elements is as below
+            gridApi.selection.on.rowSelectionChanged($scope,function(row){
+                var msg = 'row selected ' + row.isSelected;
+                $scope.rowtobebinded=row.entity.ITEMNO;
+
+
+
+            });
+
+
+
+
+
+
+
         }
+
+    };
+
+
+    $scope.getRow=function(index){
+        $scope.gridApi.selection.selectRow(index);
+        var selRow=$scope.gridApi.selection.getSelectedRows();
+        console.log(selRow);
     };
 
     var getPage = function() {

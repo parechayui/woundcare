@@ -1,4 +1,4 @@
-angular.module('woundCare',  ['ui.router','ngAnimate', 'ngSanitize', 'ui.bootstrap','restangular','ui.grid','ui.grid.pagination']);
+angular.module('woundCare',  ['ui.router','ngAnimate', 'ngSanitize', 'ui.bootstrap','restangular','ui.grid','ui.grid.pagination','ui.grid.selection']);
 
 require('./directives');
 require('./services');
