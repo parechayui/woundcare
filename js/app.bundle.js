@@ -329,18 +329,7 @@ function PatientListController($state,$scope,$http, uiGridConstants) {
                 paginationOptions.pageSize = pageSize;
                 getPage();
             });
-            $scope.gridApi.grid.modifyRows($scope.gridOptions.data);
-            $scope.gridApi.selection.selectRow($scope.gridOptions.data[0]);
-            var rows = $scope.gridApi.selection.getSelectedRows();
 
-            //aravind's code to get the selected row elements is as below
-            gridApi.selection.on.rowSelectionChanged($scope,function(row){
-                var msg = 'row selected ' + row.isSelected;
-                $scope.rowtobebinded=row.entity.ITEMNO;
-
-
-
-            });
 
 
 
@@ -356,7 +345,7 @@ function PatientListController($state,$scope,$http, uiGridConstants) {
     $scope.getRow=function(index){
         $scope.gridApi.selection.selectRow(index);
         var selRow=$scope.gridApi.selection.getSelectedRows();
-        console.log(selRow);
+        $scope.rowtobebinded=selRow[0]["First Name"]+" "+selRow[0]['Last Name'];
     };
 
     var getPage = function() {
