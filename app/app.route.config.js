@@ -23,28 +23,38 @@
                 templateUrl: 'app/templates/patientlist.html',
                 controller: 'patientListController as listCtrl'
             })
-            .state('main.newpatient', {
-                url: '/newpatient',
-                templateUrl: 'app/templates/newpatient.html',
-                controller: 'newPatientController as newPatientCtrl'
+            .state('main.patient', {
+                url: '/patient',
+                templateUrl: 'app/templates/patient.html',
+                controller: 'patientController as patientCtrl',
+                params: {
+                    PatientObj: null
+                }
             })
         .state('main.woundcare', {
                 url: '/woundcare',
                 templateUrl: 'app/templates/woundcare.html',
-                controller: 'woundCareController as woundCareCtrl'
+                controller: 'woundCareController as woundCareCtrl',
+            params: {
+                PatientObj: null
+            }
             })
             .state('main.physicalexam', {
                 url: '/physicalexam',
                 templateUrl: 'app/templates/physicalexam.html',
-                controller: 'physicalExamController as physicalExamCtrl'
+                controller: 'physicalExamController as physicalExamCtrl',
+                params: {
+                    INHObj: null
+                }
             })
             .state('main.investigationreview', {
                 url: '/investigationreview',
                 templateUrl: 'app/templates/investigationreview.html',
-                controller: 'investigationreviewController as investigationReviewCtrl'
-            })
-
-        ;
+                controller: 'investigationreviewController as investigationReviewCtrl',
+                params: {
+                    INHObj: null
+                }
+            })      ;
 
 
         var user = {

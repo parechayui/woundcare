@@ -22,11 +22,11 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
         enableFullRowSelection: true,
         enableRowSelection: true,
         columnDefs: [
-            {name: 'First Name', enableSorting: false},
-            {name: 'Last Name', enableSorting: false},
-            {name: 'Last Visit', enableSorting: false},
-            {name: 'Follow Up', enableSorting: false},
-            {name: 'Status', enableSorting: false}
+            {name: 'firstName', enableSorting: false},
+            {name: 'lastName', enableSorting: false},
+            {name: 'lastVisit', enableSorting: false},
+            {name: 'followUp', enableSorting: false},
+            {name: 'status', enableSorting: false}
         ],
         multiSelect: false,
         onRegisterApi: function (gridApi) {
@@ -45,11 +45,10 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
 
     vm.getRow = function (index) {
         vm.gridApi.selection.selectRow(index);
-        var selRow = vm.gridApi.selection.getSelectedRows();
-        vm.rowtobebinded = selRow[0]["First Name"] + " " + selRow[0]['Last Name'];
+        vm.presentPatient =vm.gridApi.selection.getSelectedRows();
     };
 
-    vm.changeList = function (listVal) {
+    vm.changeListView = function (listVal) {
         if (listVal === 'active') {
             vm.list.active = true;
             getDifferList();
@@ -66,7 +65,7 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
         var firstRow = (paginationOptions.pageNumber - 1) * paginationOptions.pageSize;
         if (vm.list.active) {
             angular.forEach(vm.data, function (val, key) {
-                if (val.Status === "Active") {
+                if (val.status === "Active") {
                     finalList.push(val);
                 }
             });
@@ -74,7 +73,7 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
             vm.gridOptions.data = finalList.slice(firstRow, firstRow + paginationOptions.pageSize);
         } else {
             angular.forEach(vm.data, function (val, key) {
-                if (val.Status === "Inactive") {
+                if (val.status === "Inactive") {
                     finalList.push(val);
                 }
             });
@@ -93,11 +92,11 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
     RequestRestApi.PatientListInfo(PatientListInfoCallback);
 
     vm.createNewPatient = function () {
-        $state.go('main.newpatient', {});
+        $state.go('main.patient', {});
     };
 
     vm.updatePatient = function () {
-        $state.go('main.newpatient', {});
+        $state.go('main.patient', {PatientObj:vm.presentPatient[0]});
     };
 }
 

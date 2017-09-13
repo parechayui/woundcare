@@ -27,10 +27,10 @@
                 
                 <ul class="nav nav-tabs">
 						  <li class="active">
-						   	<a href="#scheduleVisit" data-toggle="tab" ng-click="listCtrl.changeList('active')">Active Patients</a>
+						   	<a href="#scheduleVisit" data-toggle="tab" ng-click="listCtrl.changeListView('active')">Active Patients</a>
 						  </li>
 						  <li>
-						   	<a href="#currentVisit" data-toggle="tab" ng-click="listCtrl.changeList('inactive')">Inactive Patients</a>
+						   	<a href="#currentVisit" data-toggle="tab" ng-click="listCtrl.changeListView('inactive')">Inactive Patients</a>
 						  </li>
 					  
 					  </ul> <!-- End Tab Nav -->
@@ -48,7 +48,7 @@
         </div> <!-- End of the Data table section-->
     </div>
     <div class="col-md-3 startVisitBtn">
-        <h4 class="pName">{{listCtrl.rowtobebinded}}</h4>
+        <h4 class="pName">{{listCtrl.presentPatient[0]['firstName']+ " " +listCtrl.presentPatient[0]['lastName']}}</h4>
         <br>
         <hr class="style1">
         <button type="button" class="btn btn-primary startVistBtn" ng-click="listCtrl.updatePatient()">Start Visit</button> 

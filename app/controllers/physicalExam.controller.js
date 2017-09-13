@@ -12,7 +12,7 @@ function PhysicalExamController($state) {
 
 
     vm.goToWoundCare = function () {
-        $state.go('main.woundcare', {});
+        $state.go('main.investigationreview', {});
     };
 
 }

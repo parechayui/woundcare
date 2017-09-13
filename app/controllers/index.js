@@ -10,7 +10,7 @@ angular
 
 angular
     .module('woundCare')
-    .controller('newPatientController', require('./newPatient.controller'));
+    .controller('patientController', require('./Patient.controller'));
 
 angular
     .module('woundCare')

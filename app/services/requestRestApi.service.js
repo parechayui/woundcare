@@ -11,11 +11,16 @@ function RequestRestApi(RestangularBaseService,RestEndPoint) {
         RestangularBaseService.getdata(RestEndPoint.PatientList, PatientListInfoCallback);
     };
 
+    var PatientInfo = function (PatientInfoCallback) {
+        //Receive Id and Use it
+        RestangularBaseService.getdata(RestEndPoint.PatientInfo, PatientInfoCallback);
+    };
 
 
 
     return {
-       PatientListInfo: PatientListInfo
+       PatientListInfo: PatientListInfo,
+        PatientInfo:PatientInfo
     };
 };
 /* RestAngular Factory Ends  */

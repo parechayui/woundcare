@@ -5,16 +5,13 @@ InvestigationReviewController.$inject = ['$state'];
 function InvestigationReviewController($state) {
     var vm = this;
 
-
-    vm.goToPatientList = function () {
+ vm.savePatientInfo = function () {
         $state.go('main.patientlist', {});
     };
 
- vm.goToPatientList = function () {
+    vm.cancel = function () {
         $state.go('main.patientlist', {});
     };
-
-
 
 
 };

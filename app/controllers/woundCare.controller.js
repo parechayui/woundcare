@@ -11,8 +11,8 @@ function WoundCareController($state) {
     };
 
 
-    vm.goToInvestigationReview = function () {
-        $state.go('main.investigationreview', {});
+    vm.goToPhysicalExam = function () {
+        $state.go('main.physicalexam', {});
     };
 
 }

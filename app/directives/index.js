@@ -2,4 +2,4 @@
 
 angular
     .module('woundCare')
-    .directive('myContract', require('./contract.directive.js'));
+    .directive('editSelect', require('./editSelect.directive.js'));

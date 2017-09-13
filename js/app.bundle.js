@@ -30,28 +30,38 @@ webpackJsonp([0],[
                 templateUrl: 'app/templates/patientlist.html',
                 controller: 'patientListController as listCtrl'
             })
-            .state('main.newpatient', {
-                url: '/newpatient',
-                templateUrl: 'app/templates/newpatient.html',
-                controller: 'newPatientController as newPatientCtrl'
+            .state('main.patient', {
+                url: '/patient',
+                templateUrl: 'app/templates/patient.html',
+                controller: 'patientController as patientCtrl',
+                params: {
+                    PatientObj: null
+                }
             })
         .state('main.woundcare', {
                 url: '/woundcare',
                 templateUrl: 'app/templates/woundcare.html',
-                controller: 'woundCareController as woundCareCtrl'
+                controller: 'woundCareController as woundCareCtrl',
+            params: {
+                INHObj: null
+            }
             })
             .state('main.physicalexam', {
                 url: '/physicalexam',
                 templateUrl: 'app/templates/physicalexam.html',
-                controller: 'physicalExamController as physicalExamCtrl'
+                controller: 'physicalExamController as physicalExamCtrl',
+                params: {
+                    INHObj: null
+                }
             })
             .state('main.investigationreview', {
                 url: '/investigationreview',
                 templateUrl: 'app/templates/investigationreview.html',
-                controller: 'investigationreviewController as investigationReviewCtrl'
-            })
-
-        ;
+                controller: 'investigationreviewController as investigationReviewCtrl',
+                params: {
+                    INHObj: null
+                }
+            })      ;
 
 
         var user = {
@@ -99,7 +109,7 @@ angular
 
 angular
     .module('woundCare')
-    .controller('newPatientController', __webpack_require__(21));
+    .controller('patientController', __webpack_require__(55));
 
 angular
     .module('woundCare')
@@ -133,7 +143,8 @@ angular
 angular
     .module('woundCare')
     .constant('RestEndPoint', {
-        PatientList:'plist'
+        PatientList:'plist',
+        PatientInfo:'patientinfo'
 
     });
 
@@ -252,33 +263,7 @@ module.exports = MainController;
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-NewPatientController.$inject = ['$state'];
-
-function NewPatientController($state) {
-    var vm = this;
-
-
-    vm.goToPatientList = function () {
-        $state.go('main.patientlist', {});
-    };
-
-    vm.goToWoundCare = function () {
-        $state.go('main.woundcare', {});
-    };
-
-
-}
-
-module.exports = NewPatientController;
-
-
-/***/ }),
+/* 21 */,
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -307,11 +292,11 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
         enableFullRowSelection: true,
         enableRowSelection: true,
         columnDefs: [
-            {name: 'First Name', enableSorting: false},
-            {name: 'Last Name', enableSorting: false},
-            {name: 'Last Visit', enableSorting: false},
-            {name: 'Follow Up', enableSorting: false},
-            {name: 'Status', enableSorting: false}
+            {name: 'firstName', enableSorting: false},
+            {name: 'lastName', enableSorting: false},
+            {name: 'lastVisit', enableSorting: false},
+            {name: 'followUp', enableSorting: false},
+            {name: 'status', enableSorting: false}
         ],
         multiSelect: false,
         onRegisterApi: function (gridApi) {
@@ -330,11 +315,10 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
 
     vm.getRow = function (index) {
         vm.gridApi.selection.selectRow(index);
-        var selRow = vm.gridApi.selection.getSelectedRows();
-        vm.rowtobebinded = selRow[0]["First Name"] + " " + selRow[0]['Last Name'];
+        vm.presentPatient =vm.gridApi.selection.getSelectedRows();
     };
 
-    vm.changeList = function (listVal) {
+    vm.changeListView = function (listVal) {
         if (listVal === 'active') {
             vm.list.active = true;
             getDifferList();
@@ -351,7 +335,7 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
         var firstRow = (paginationOptions.pageNumber - 1) * paginationOptions.pageSize;
         if (vm.list.active) {
             angular.forEach(vm.data, function (val, key) {
-                if (val.Status === "Active") {
+                if (val.status === "Active") {
                     finalList.push(val);
                 }
             });
@@ -359,7 +343,7 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
             vm.gridOptions.data = finalList.slice(firstRow, firstRow + paginationOptions.pageSize);
         } else {
             angular.forEach(vm.data, function (val, key) {
-                if (val.Status === "Inactive") {
+                if (val.status === "Inactive") {
                     finalList.push(val);
                 }
             });
@@ -378,11 +362,11 @@ function PatientListController($state, $http, uiGridConstants, RequestRestApi) {
     RequestRestApi.PatientListInfo(PatientListInfoCallback);
 
     vm.createNewPatient = function () {
-        $state.go('main.newpatient', {});
+        $state.go('main.patient', {});
     };
 
     vm.updatePatient = function () {
-        $state.go('main.newpatient', {});
+        $state.go('main.patient', {PatientObj:vm.presentPatient[0]});
     };
 }
 
@@ -521,11 +505,16 @@ function RequestRestApi(RestangularBaseService,RestEndPoint) {
         RestangularBaseService.getdata(RestEndPoint.PatientList, PatientListInfoCallback);
     };
 
+    var PatientInfo = function (PatientInfoCallback) {
+        //Receive Id and Use it
+        RestangularBaseService.getdata(RestEndPoint.PatientInfo, PatientInfoCallback);
+    };
 
 
 
     return {
-       PatientListInfo: PatientListInfo
+       PatientListInfo: PatientListInfo,
+        PatientInfo:PatientInfo
     };
 };
 /* RestAngular Factory Ends  */
@@ -610,6 +599,67 @@ module.exports = RequestRestApi;
     /* RestAngular Factory Ends  */
     module.exports = RestangularBaseService;
 
+
+
+/***/ }),
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+PatientController.$inject = ['$state','RequestRestApi'];
+
+function PatientController($state,RequestRestApi) {
+    var vm = this;
+    vm.patientInfo={};
+
+    vm.goToPatientList = function () {
+        $state.go('main.patientlist', {});
+    };
+
+    vm.goToWoundCare = function () {
+        $state.go('main.woundcare', {});
+    };
+
+    var PatientInfoCallback=function(results){
+        vm.patientInfo=results.data[0];
+    };
+
+//$state.params.PatientObj.id,
+    RequestRestApi.PatientInfo(PatientInfoCallback);
+
+
+
+}
+
+module.exports = PatientController;
 
 
 /***/ })

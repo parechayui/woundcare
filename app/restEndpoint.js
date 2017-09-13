@@ -3,7 +3,8 @@
 angular
     .module('woundCare')
     .constant('RestEndPoint', {
-        PatientList:'plist'
+        PatientList:'plist',
+        PatientInfo:'patientinfo'
 
     });
 
